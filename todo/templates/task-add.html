@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+
+{%block title_block%}
+<title>Todo-Add</title>
+
+{%endblock%}
+
+{%block body_block%}
+{%for m in messages%}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>{{m}}</strong> 
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+{%endfor%}
+<div class="container">
+    <div class="row">
+     <div class="col-4"></div>
+     <div class="col-4">
+        <form action="" method="post" enctype="multipart/form-data">
+            {%csrf_token%}
+            {{form.as_p}}
+            <input type="submit" value="add" class="btn btn-success">
+
+        </form>
+
+
+     </div>
+     <div class="col-4"></div>
+
+    </div>
+
+
+
+</div>
+
+{%endblock%}
